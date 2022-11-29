@@ -13,3 +13,4 @@ sudo touch movefiles.service
 echo $'[Unit] \nDescription=Files Mover Service \nAfter=network.target \n\n[Service] \nUser=root \nExecStart=/bin/bash /tmp/script/script.sh \nRestartSec=5s \nRestart=on-failure \n\n[Install] \nWantedBy=multi-user.target' >> /lib/systemd/system/movefiles.service
 sudo systemctl daemon-reload
 sudo systemctl start movefiles.service
+sudo systemctl enable movefiles.service
